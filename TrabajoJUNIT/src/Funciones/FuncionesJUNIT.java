@@ -27,6 +27,7 @@ public class FuncionesJUNIT {
 		}
 		return resultado;
 	}
+	
 	public static String CadenasMayusVocal(String cadena1, String cadena2,String cadena3) {
 		String result = null;
 		String a = "";
@@ -43,14 +44,30 @@ public class FuncionesJUNIT {
 	}
 	
 	public static int NumeroCadena(String cadena) {
-		int num = 0;
+		int valornum = 0;
 		for(int i = 0; i < cadena.length();i++) {
 			if(cadena.charAt(i)>=48 && cadena.charAt(i)<=57) {
-				num += Integer.parseInt(cadena);
-				System.out.println(num);
+			int num = Character.getNumericValue(cadena.charAt(i));
+				valornum = valornum+num;
 			}
 		}
-		return num;
+		
+		return valornum;
 	}
+	
+	public static double [] listaDoble(double lista []) {	
+		for (int i = 0; i<lista.length;i++) {
+			if(i%2 == 0) {
+				lista[i] = lista[i]*2;
+			}else {
+				lista[i] = (lista[i]*lista[i])*lista[i];
+			}	
+			System.out.println(lista[i]);
+		}
+		return lista;
+	}
+	
+	
+	
 	
 }
