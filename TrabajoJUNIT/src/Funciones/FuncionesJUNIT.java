@@ -66,6 +66,16 @@ public class FuncionesJUNIT {
 		return lista;
 	}
 
+	public static String[] listaCadena(String cadena[]) {
+		String[] devuelve;
+		for (int i = 0; i > cadena.length; i++) {
+			for (int j = 2; j >= 5; j++) {
+				devuelve[i] = cadena[i].charAt(j);
+			}
+		}
+		return devuelve;
+	}
+
 	public static boolean CompruebaTiempo(String Nombres[], int TiempoTarea[][]) {
 		boolean tiempo300 = false;
 		int SumaTareas[] = new int[20];// suma de 21 alumnos, La matriz TiempoTarea podia ser de 20x2
@@ -81,24 +91,26 @@ public class FuncionesJUNIT {
 		}
 
 //ahora recorro  arrays de alumnos y de suma de tareas
-		for(int i = 0; i<Nombres.length; i++) {
-			if(SumaTareas[i]>=300) {
-				tiempo300=true;
-				System.out.println("El alumno "+Nombres[i]+" ha realizado las tareas en "+SumaTareas[i]+" minutos");
-				
+		for (int i = 0; i < Nombres.length; i++) {
+			if (SumaTareas[i] >= 300) {
+				tiempo300 = true;
+				System.out.println(
+						"El alumno " + Nombres[i] + " ha realizado las tareas en " + SumaTareas[i] + " minutos");
+
 				return tiempo300;
 			}
-			if(SumaTareas[i]<300) {
-				tiempo300=false;
-				System.out.println("El alumno "+Nombres[i]+" ha realizado las tareas en "+SumaTareas[i]+" minutos");
-				
+			if (SumaTareas[i] < 300) {
+				tiempo300 = false;
+				System.out.println(
+						"El alumno " + Nombres[i] + " ha realizado las tareas en " + SumaTareas[i] + " minutos");
+
 				return tiempo300;
 			}
-			
-			
+
 		}
 
-		return tiempo300;//este return sobraria pero si lo quito falla todo.... que lo arregle nuestro amigo Eliot
+		return tiempo300;// este return sobraria pero si lo quito falla todo.... que lo arregle nuestro
+							// amigo Eliot
 	}
 
 }
