@@ -18,14 +18,6 @@ En el trabajo debe cumplirse los siguientes puntos:
 * Todo el proyecto debe subirse a github.
 * Sólo debe enviarse el link de github como entrega del poyecto.
 
-	Funciones:
-
-* Funcion que dada una lista de Strings, devuelva los Strings pero recortado a partir de R 
-  cartacteres y hasta S caracteres. (1.25 puntos)
-  
-* Funcion que dado una lista de alumnos y una lista de trabajos con el tiempo empleado en cada 
-  uno en minuots, devuelva verdadero si el tiempo total empleado en todos los trabajos por 
-  cada alumno es mayor a 300 minutos. (1.25 puntos). 
 
    Bloques de Incognitas:
 

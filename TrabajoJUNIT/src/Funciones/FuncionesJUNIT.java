@@ -67,50 +67,37 @@ public class FuncionesJUNIT {
 	}
 
 	public static String[] listaCadena(String cadena[]) {
-		String[] devuelve;
-		for (int i = 0; i > cadena.length; i++) {
-			for (int j = 2; j >= 5; j++) {
-				devuelve[i] = cadena[i].charAt(j);
-			}
+		String devuelve []= new String [3];
+		for (int i = 0; i < cadena.length; i++) {
+				devuelve[i] = cadena[i].substring(2, 5);
+				System.out.println(devuelve[i]);
 		}
 		return devuelve;
 	}
 
-	public static boolean CompruebaTiempo(String Nombres[], int TiempoTarea[][]) {
-		boolean tiempo300 = false;
-		int SumaTareas[] = new int[20];// suma de 21 alumnos, La matriz TiempoTarea podia ser de 20x2
-		// para 21 alumnos y tres tareas...
-		int contAlumnos = 0;
-
-		// hacer la suma de las tareas de cada alumno
-		for (int x = 0; x < TiempoTarea.length; x++) {
-			for (int y = 0; y < TiempoTarea[x].length; y++) {
-				++contAlumnos;
-				SumaTareas[contAlumnos] = TiempoTarea[x][y];
+	public static boolean CompruebaTiempo(String Alumnos[][]) {
+		boolean resultado = true;
+		boolean tiempoAlumno[] = new boolean[3];
+		int notas[] = new int[3];
+		for (int i = 0; i < Alumnos.length; i++) {
+			for (int j = 1; j < Alumnos[i].length; j++) {
+				notas[i] = notas[i] + Integer.parseInt(Alumnos[i][j]);
+			}
+		}
+		for (int i = 0; i < notas.length; i++) {
+			if (notas[i] <= 300) {
+				tiempoAlumno[i] = false;
+			} else {
+				tiempoAlumno[i] = true;
 			}
 		}
 
-//ahora recorro  arrays de alumnos y de suma de tareas
-		for (int i = 0; i < Nombres.length; i++) {
-			if (SumaTareas[i] >= 300) {
-				tiempo300 = true;
-				System.out.println(
-						"El alumno " + Nombres[i] + " ha realizado las tareas en " + SumaTareas[i] + " minutos");
-
-				return tiempo300;
+		for (int i = 0; i < tiempoAlumno.length; i++) {
+			if (tiempoAlumno[i] == false) {
+				resultado = false;
 			}
-			if (SumaTareas[i] < 300) {
-				tiempo300 = false;
-				System.out.println(
-						"El alumno " + Nombres[i] + " ha realizado las tareas en " + SumaTareas[i] + " minutos");
-
-				return tiempo300;
-			}
-
 		}
-
-		return tiempo300;// este return sobraria pero si lo quito falla todo.... que lo arregle nuestro
-							// amigo Eliot
+		return resultado;
 	}
 
 }
