@@ -25,7 +25,7 @@ En el trabajo debe cumplirse los siguientes puntos:
   
 * Funcion que dado una lista de alumnos y una lista de trabajos con el tiempo empleado en cada 
   uno en minuots, devuelva verdadero si el tiempo total empleado en todos los trabajos por 
-  cada alumno es mayor a T minutos. (1.25 puntos). 
+  cada alumno es mayor a 300 minutos. (1.25 puntos). 
 
    Bloques de Incognitas:
 
