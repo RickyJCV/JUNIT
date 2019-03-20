@@ -49,7 +49,7 @@ class PruebaListaCadena {
 	@Test
 	void resultadoEsperado3() {
 		String nombres[]= {"#&%**","#&%**","#&%**"};
-		String resultado[]= {"101","111","021"};
+		String resultado[]= {"%**","%**","%**"};
 		assertArrayEquals(resultado, o.listaCadena(nombres));
 
 	}
